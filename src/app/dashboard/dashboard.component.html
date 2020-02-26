@@ -1,0 +1,16 @@
+<div>
+    <h4 class="alert alert-primary">Existing System Permissions</h4>
+</div>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let permission of permissions">
+        <a routerLink="/detail/{{permission.permissionCode}}">
+            {{permission.permissionName}}
+        </a>
+        <span class="badge badge-danger" (click)="deletePermission(permission)">delete</span>
+        <a routerLink="/edit/{{permission.permissionCode}}">
+            <span class="badge badge-success">edit</span>
+        </a>
+    </li>
+    
+</ul>
+

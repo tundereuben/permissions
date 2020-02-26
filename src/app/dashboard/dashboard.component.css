@@ -1,0 +1,7 @@
+span {
+    float: right;
+    width: 45px;
+    margin-right: 5px;
+    padding: 3px 5px;
+    cursor: pointer;
+}

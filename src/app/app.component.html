@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="jumbotron">
+    <!-- <h3 class="text-center">{{ title }}</h3> -->
+
+    <!-- <nav class="navbar navbar-expand-sm bg-light">
+      <ul class="navbar-nav">
+        <span *ngIf="loggedIn">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/dashboard">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/add">Add Permission</a>
+          </li>
+        </span>
+        <li class="nav-item" *ngIf="!loggedIn">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+      </ul>
+    </nav> -->
+
+    <router-outlet></router-outlet>
+
+    <li class="list-group-item"  *ngIf="loggedIn">
+      <button class=" btn btn-success mt-3" (click)="onLogout()">Logout</button>
+    </li>
+    <!-- <app-dashboard></app-dashboard>
+    <app-permission-details [permission]="selectedPermission"></app-permission-details>
+    <app-permission-add></app-permission-add> -->
+
+  </div>
+</div>

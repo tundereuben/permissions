@@ -1,0 +1,25 @@
+<p-panel header="Permission Listing">
+    <p-table [value]="permissions">
+    <ng-template pTemplate="header">
+        <tr>
+            <!-- <th>ID</th> -->
+            <th>Name</th>
+            <th>Grouping</th>
+            <th>Enabled?</th>
+            <th>Actions</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-permission>
+        <tr>
+            <!-- <td>{{ permission.permissionCode}}</td> -->
+            <td>{{permission.permissionName}}</td>
+            <td>{{permission.permissionGrouping}}</td>
+            <td>{{permission.enabled}}</td>
+            <td class="text-center">
+                <p-button icon="pi pi-pencil" iconPos="left" styleClass="ui-button-success"></p-button>
+                <p-button icon="pi pi-times" iconPos="left" styleClass="ui-button-danger"></p-button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+</p-panel>
