@@ -1,25 +1,65 @@
 <p-panel header="Permission Listing">
+    <!-- <p-button icon="pi pi-plus" iconPos="left" (click)="onAdd()"></p-button> -->
+    <p class="text-right text-primary" (click)="onAdd()">
+        Add Permission
+    </p>
     <p-table [value]="permissions">
-    <ng-template pTemplate="header">
-        <tr>
-            <!-- <th>ID</th> -->
-            <th>Name</th>
-            <th>Grouping</th>
-            <th>Enabled?</th>
-            <th>Actions</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-permission>
-        <tr>
-            <!-- <td>{{ permission.permissionCode}}</td> -->
-            <td>{{permission.permissionName}}</td>
-            <td>{{permission.permissionGrouping}}</td>
-            <td>{{permission.enabled}}</td>
-            <td class="text-center">
-                <p-button icon="pi pi-pencil" iconPos="left" styleClass="ui-button-success"></p-button>
-                <p-button icon="pi pi-times" iconPos="left" styleClass="ui-button-danger"></p-button>
-            </td>
-        </tr>
-    </ng-template>
-</p-table>
+        <ng-template pTemplate="header">
+            <tr>
+                <!-- <th>ID</th> -->
+                <th>Name</th>
+                <th>Grouping</th>
+                <th>Enabled?</th>
+                <th>Actions</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-permission>
+            <tr>
+                <!-- <td>{{ permission.permissionCode}}</td> -->
+                <td>{{permission.permissionName}}</td>
+                <td>{{permission.permissionGrouping}}</td>
+                <td>{{permission.enabled}}</td>
+                <td class="text-center">
+                    <p-button icon="pi pi-pencil" iconPos="left" styleClass="ui-button-success" (click)="onEdit(permission)">
+                    </p-button>
+                    <p-button icon="pi pi-times" iconPos="left" styleClass="ui-button-danger"
+                        (click)="deletePermission(permission)">
+                    </p-button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
 </p-panel>
+
+<p-dialog header="Add/Edit Permission" [(visible)]="display">
+
+    <form [formGroup]="permissionAddForm">
+
+        <div class="form-group">
+            <label for="permissionName">Permission Name</label>
+            <input type="text" class="form-control" formControlName="permissionName">
+        </div>
+        <div class="form-group">
+            <label for="permissionGrouping">Permission Grouping</label>
+            <input type="text" class="form-control" formControlName="permissionGrouping">
+        </div>
+
+        <div class="form-group">
+            <span>Permission Enabled?: </span>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="permissionEnabled" value="true"
+                    formControlName="permissionEnabled">
+                <label class="form-check-label" for="true">True</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="permissionEnabled" value="false"
+                    formControlName="permissionEnabled">
+                <label class="form-check-label" for="false">False</label>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+
+    </form>
+
+</p-dialog>

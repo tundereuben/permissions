@@ -35,9 +35,7 @@ export class PermissionService {
   }
 
   deletePermission(id: number): Observable<{}> {
-    console.log(`Deleted clicked for ${id}`);
     return this.http.delete(`/aig-uaa/api/permission/deletePermission/${id}`, {headers: this.headers});
-    
   }
 
   updatePermission(permission: Permission): Observable<Permission> {

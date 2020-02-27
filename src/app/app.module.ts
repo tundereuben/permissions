@@ -21,6 +21,8 @@ import {PanelModule} from 'primeng/panel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
+import {DialogModule} from 'primeng/dialog';
+import {InputTextModule} from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import {ButtonModule} from 'primeng/button';
     BrowserAnimationsModule,
     TableModule,
     ButtonModule,
-    
+    DialogModule,
+    InputTextModule
   ],
   providers: [
     AuthService, 

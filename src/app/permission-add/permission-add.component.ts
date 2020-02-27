@@ -23,7 +23,7 @@ export class PermissionAddComponent implements OnInit {
     private permissionService: PermissionService,
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router 
   ) { }
 
   ngOnInit() {
@@ -38,7 +38,6 @@ export class PermissionAddComponent implements OnInit {
     this.permissionService.getPermission(this.id)
       .subscribe(data => {
         console.log('data from db', data);
-
         this.permissionAddForm.patchValue({
           permissionCode: data.permissionCode,
           permissionName: data.permissionName,

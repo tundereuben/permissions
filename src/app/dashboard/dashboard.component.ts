@@ -45,8 +45,7 @@ export class DashboardComponent implements OnInit {
       this.permissionService.deletePermission(id).subscribe(data => {
         this.permissions = this.permissions.filter(perm => perm.permissionCode !== id)
       });
-    }
-    
+    } 
   }
 
 }

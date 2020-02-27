@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, Form, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Auth, AuthService } from '../http/auth.service';
+import { Auth, AuthService } from '../http/auth.service'; 
 
 @Component({
   selector: 'app-login',
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
 
     this.authService.authenticate(auth).subscribe(token => {
       this.authService.setAuthToken(token.access_token);
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/prime-dashboard']);
       // TODO: Destroy form data after login
     });
   }
