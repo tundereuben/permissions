@@ -126,6 +126,4 @@ export class PrimeDashboardComponent implements OnInit {
       });
     }
   }
-
-
 }
