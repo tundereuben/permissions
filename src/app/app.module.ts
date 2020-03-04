@@ -23,6 +23,7 @@ import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
 import {InputTextModule} from 'primeng/inputtext';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {InputTextModule} from 'primeng/inputtext';
     TableModule,
     ButtonModule,
     DialogModule,
-    InputTextModule
+    InputTextModule,
+    RouterModule,
   ],
   providers: [
     AuthService, 

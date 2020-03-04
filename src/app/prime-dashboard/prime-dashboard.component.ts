@@ -36,10 +36,6 @@ export class PrimeDashboardComponent implements OnInit {
   ngOnInit() {
     this.getPermissions();
     this.createForm();
-    // this.id = +this.route.snapshot.paramMap.get('id');
-    // if (this.id) {
-    //   this.getPermission();
-    // }
   }
 
   getPermission(): void {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, Form, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Auth, AuthService } from '../http/auth.service'; 
 
@@ -10,6 +10,9 @@ import { Auth, AuthService } from '../http/auth.service';
 })
 
 export class LoginComponent implements OnInit {
+  
+  
+
   loginForm = this.fb.group({
     authType: [''],
     username: [''],
@@ -18,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private route: ActivatedRoute,
+    // private route: ActivatedRoute,
     private router: Router,
     private authService: AuthService
   ) { }
@@ -35,7 +38,7 @@ export class LoginComponent implements OnInit {
       password: rawData.password
     }
 
-    console.log(rawData)
+    // console.log(rawData)
 
     this.authService.authenticate(auth).subscribe(token => {
       this.authService.setAuthToken(token.access_token);
