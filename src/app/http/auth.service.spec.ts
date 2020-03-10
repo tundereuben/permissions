@@ -29,8 +29,8 @@ describe('AuthService', () => {
         expect(authService.getAuthToken()).toBeFalsy();
     })
 
-    xit('should return an Observable when authenticated', () => {
-        // TODO: test form data & authentication
+    it('should return an Observable when authenticated', () => {
+        
     });
 
     it('should return true when a user is logged in', () => {
